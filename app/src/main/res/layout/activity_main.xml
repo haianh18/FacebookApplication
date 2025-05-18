@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3b5998"
+    tools:context=".MainActivity">
+
+    <!-- Facebook Logo -->
+    <ImageView
+        android:id="@+id/imageView_logo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/fb"
+        />
+
+    <!-- Language Selection -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/imageView_logo"
+        android:id="@+id/relativeLayout_language">
+    <TextView
+        android:id="@+id/textView_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="159dp"
+        android:layout_marginTop="10dp"
+        android:text="English"
+        android:textColor="#55FFFFFF"
+        android:textSize="14sp" />
+        <TextView
+            android:id="@+id/textView_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/textView_language"
+            android:text=" · Change"
+            android:textColor="#CCFFFFFF"
+            android:textSize="14sp" />
+    </RelativeLayout>
+    <!-- Email/Phone Field -->
+    <EditText
+        android:id="@+id/editText_email"
+        android:layout_width="356dp"
+        android:layout_height="57dp"
+        android:layout_below="@id/relativeLayout_language"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="30dp"
+        android:hint="Email or Phone"
+        android:inputType="textEmailAddress"
+        android:outlineProvider="bounds"
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#55FFFFFF"
+        android:textSize="16sp" />
+
+    <!-- Password Field -->
+    <EditText
+        android:id="@+id/editText_password"
+        android:layout_width="363dp"
+        android:layout_height="58dp"
+        android:layout_below="@id/editText_email"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:padding="12dp"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#55FFFFFF"
+        android:textSize="16sp" />
+
+    <!-- Login Button -->
+    <Button
+        android:id="@+id/button_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText_password"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="30dp"
+        android:background="#7A2196F3"
+        android:text="LOG IN"
+        android:textColor="#55FFFFFF"
+        android:textSize="16sp"
+        android:visibility="visible"
+        tools:visibility="visible" />
+
+    <!-- Sign Up Link -->
+    <TextView
+        android:id="@+id/textView_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_login"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="195dp"
+        android:layout_marginEnd="140dp"
+        android:text="Sign Up for Facebook"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp" />
+
+
+    <!-- Forgot Password Link -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_signup"
+        android:layout_marginTop="15dp">
+
+        <TextView
+            android:id="@+id/textView_forgot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="Forgot Password?"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@id/textView_forgot"
+            android:src="@drawable/ic_help" />
+    </RelativeLayout>
+
+</RelativeLayout>
