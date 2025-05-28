@@ -26,12 +26,13 @@ public class OnLogInEventListener implements View.OnClickListener{
         String email = emailEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
         List<UserData> userDataList = new ArrayList<>(UserData.getUserData());
-        Intent intent = new Intent(context, HomeActivity.class);
+        //Intent intent = new Intent(context, HomeActivity.class);
+        Intent intent = new Intent(context, ProductListActivity.class);
 
         for (UserData userData : userDataList
              ) {
             if (email.equals(userData.getUsername()) && password.equals(userData.getPassword())) {
-                intent.putExtra("displayingName", userData.getName());
+                //intent.putExtra("displayingName", userData.getName());
                  context.startActivity(intent);
                  return;
             }
