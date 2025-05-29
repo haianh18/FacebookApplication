@@ -36,6 +36,7 @@ android {
 
 dependencies {
     implementation(libs.recyclerview)
+    implementation("com.squareup.picasso:picasso:2.8")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
