@@ -22,4 +22,13 @@
         android:textColor="@android:color/black"
         android:layout_marginTop="8dp"
         android:gravity="center"/>
+
+    <ImageButton
+        android:id="@+id/add_to_cart_button"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="4dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_input_add"
+        android:contentDescription="Add to cart" />
 </LinearLayout>
