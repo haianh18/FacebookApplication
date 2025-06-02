@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:layout_marginTop="65dp"
     tools:context=".CartActivity">
 
     <TextView
@@ -18,9 +19,10 @@
 
     <Button
         android:id="@+id/back_button"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back" />
+        android:text="Back to Product List" />
 
     <TextView
         android:id="@+id/empty_cart_text"

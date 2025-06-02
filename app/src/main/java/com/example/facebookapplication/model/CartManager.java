@@ -59,14 +59,33 @@ public class CartManager {
         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, 
                 PendingIntent.FLAG_IMMUTABLE);
 
-        String notificationText = cartItems.size() + " products in your cart";
+        // Create notification title
+        String notificationTitle = cartItems.size() + " products in your cart";
 
+        // Create notification content showing product names
+        StringBuilder contentBuilder = new StringBuilder();
+        for (int i = 0; i < Math.min(3, cartItems.size()); i++) {
+            contentBuilder.append("• ").append(cartItems.get(i).getName());
+            if (i < Math.min(3, cartItems.size()) - 1) {
+                contentBuilder.append("\n");
+            }
+        }
+
+        // If there are more than 3 products, add "and more..." text
+        if (cartItems.size() > 3) {
+            contentBuilder.append("\n• and ").append(cartItems.size() - 3).append(" more...");
+        }
+
+        String notificationContent = contentBuilder.toString();
+
+        // Create notification with expanded style to show multiple lines
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_launcher_foreground)
-                .setContentTitle("Shopping Cart")
-                .setContentText(notificationText)
+                .setContentTitle(notificationTitle)
+                .setContentText(notificationContent)
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                 .setContentIntent(pendingIntent)
+                .setStyle(new NotificationCompat.BigTextStyle().bigText(notificationContent))
                 .setAutoCancel(true);
 
         NotificationManager notificationManager = (NotificationManager) 
