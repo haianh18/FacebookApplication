@@ -17,7 +17,6 @@ import com.example.facebookapplication.model.Product;
 import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
-
     private final Context context;
     private final List<Product> cartItems;
 
@@ -28,8 +27,10 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
     @NonNull
     @Override
-    public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_cart, parent, false);
+    public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent,
+                                             int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.item_cart,
+                parent, false);
         return new CartViewHolder(view);
     }
 
@@ -38,7 +39,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         Product product = cartItems.get(position);
         holder.productName.setText(product.getName());
         holder.productImage.setImageResource(product.getImageResId());
-        
+
         // Set remove button click listener
         holder.removeButton.setOnClickListener(v -> {
             cartItems.remove(position);
